@@ -257,7 +257,11 @@ CREATE TABLE `users` (
   `city` varchar(100) NOT NULL,
   `role` enum('admin','customer') NOT NULL DEFAULT 'customer',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `active` tinyint(1) NOT NULL DEFAULT 1
+  `active` tinyint(1) NOT NULL DEFAULT 1,
+  `total_spent` decimal(10,2) NOT NULL DEFAULT 0.00 COMMENT 'Tổng tiền đã chi tiêu',
+  `total_points` int(11) NOT NULL DEFAULT 0 COMMENT 'Tổng điểm tích lũy',
+  `customer_level` enum('bronze','silver','gold','platinum') NOT NULL DEFAULT 'bronze' COMMENT 'Cấp độ khách hàng',
+  `last_order_date` datetime DEFAULT NULL COMMENT 'Ngày đặt hàng cuối cùng'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

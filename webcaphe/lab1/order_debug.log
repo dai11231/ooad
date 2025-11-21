@@ -375,3 +375,28 @@ Total: 500000
 2025-11-14 07:10:27 - ORDER CREATED: Created order ID: 15 (Custom ID: ORDER20251114071027)
 2025-11-14 07:10:27 - TRANSACTION COMPLETED
 2025-11-14 07:10:27 - VERIFICATION: Verified order exists - ID: 15 | User ID: 5 | Total: 500000.00
+2025-11-21 20:15:32 - PRE-ORDER: User ID: 6
+Email: dangngocdai08112@gmail.com
+Fullname: đài đặng
+2025-11-21 20:15:32 - INSERT DATA: Attempting to insert order with user_id: 6
+Name: đài đặng
+Total: 350000
+2025-11-21 20:15:32 - ORDER CREATED: Created order ID: 15 (Custom ID: ORDER20251121201532)
+2025-11-21 20:15:32 - ERROR: Unknown column 'total_spent' in 'field list'
+2025-11-21 20:19:46 - PRE-ORDER: User ID: 6
+Email: dangngocdai08112@gmail.com
+Fullname: đài đặng
+2025-11-21 20:19:46 - INSERT DATA: Attempting to insert order with user_id: 6
+Name: đài đặng
+Total: 350000
+2025-11-21 20:19:46 - ORDER CREATED: Created order ID: 16 (Custom ID: ORDER20251121201946)
+2025-11-21 20:19:46 - ERROR: Unknown column 'total_spent' in 'field list'
+2025-11-21 20:21:18 - PRE-ORDER: User ID: 5
+Email: dangngocdai0811@gmail.com
+Fullname: đài đặng
+2025-11-21 20:21:18 - INSERT DATA: Attempting to insert order with user_id: 5
+Name: đài đặng
+Total: 350000
+2025-11-21 20:21:18 - ORDER CREATED: Created order ID: 15 (Custom ID: ORDER20251121202118)
+2025-11-21 20:21:18 - TRANSACTION COMPLETED
+2025-11-21 20:21:18 - VERIFICATION: Verified order exists - ID: 15 | User ID: 5 | Total: 350000.00

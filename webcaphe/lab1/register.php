@@ -44,7 +44,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("sssssss", $username, $email, $hashed_password, $fullname, $phone, $address, $city);
         
         if ($stmt->execute()) {
-            $_SESSION['success'] = "Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.";
+            // Get the new user's ID
+            $user_id = $conn->insert_id;
+            
+            // Set session variables
+            $_SESSION['user_id'] = $user_id;
+            $_SESSION['username'] = $username;
+            $_SESSION['fullname'] = $fullname;
+            $_SESSION['email'] = $email;
+            $_SESSION['role'] = 'customer'; // Default role for new users
+            
+            // Set success message
+            $_SESSION['success'] = "Đăng ký thành công! Chào mừng " . htmlspecialchars($fullname) . " đến với Cà Phê Đậm Đà!";
+            
+            // Redirect to home page
             header("Location: index.php");
             exit();
         } else {
