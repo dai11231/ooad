@@ -117,140 +117,67 @@ try {
     if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
         $is_admin = true;
     }
-    
-    // Tạo mã đơn hàng tùy chỉnh
+
+    // Tạo mã đơn hàng tùy chỉnh và insert trong vòng lặp để đảm bảo unique
+    $max_retries = 5;
+    $retry_count = 0;
+    $success = false;
+    $order_id = 0;
     $custom_order_id = null;
     
-    if ($is_admin) {
-        // Admin sẽ có mã đơn hàng bắt đầu bằng DH
-        $prefix = "DH";
-        $random_number = mt_rand(100000, 999999);
-        $timestamp_short = date('ymd');
-        $custom_order_id = $prefix . $timestamp_short . $random_number;
-        
-        // Đảm bảo mã đơn hàng là duy nhất
-        $check_unique = $conn->prepare("SELECT id FROM orders WHERE custom_order_id = ?");
-        $check_unique->bind_param("s", $custom_order_id);
-        $check_unique->execute();
-        $result_unique = $check_unique->get_result();
-        
-        // Nếu mã đã tồn tại, tạo mã mới cho đến khi tìm được mã duy nhất
-        while ($result_unique->num_rows > 0) {
+    do {
+        if ($is_admin) {
+            // Admin: DH + YYMMDD + 6 random digits
+            $prefix = "DH";
             $random_number = mt_rand(100000, 999999);
+            $timestamp_short = date('ymd');
             $custom_order_id = $prefix . $timestamp_short . $random_number;
-            $check_unique->bind_param("s", $custom_order_id);
-            $check_unique->execute();
-            $result_unique = $check_unique->get_result();
-        }
-    } else {
-        // Người dùng thường sẽ có mã đơn hàng bắt đầu bằng ORDER
-        // Format: ORDER + YYYYMMDDHHMMSS
-        $timestamp = date('YmdHis');
-        $custom_order_id = "ORDER" . $timestamp;
-        
-        // Đảm bảo mã đơn hàng là duy nhất
-        $check_unique = $conn->prepare("SELECT id FROM orders WHERE custom_order_id = ?");
-        $check_unique->bind_param("s", $custom_order_id);
-        $check_unique->execute();
-        $result_unique = $check_unique->get_result();
-        
-        // Nếu mã đã tồn tại (không có khả năng cao), thêm số ngẫu nhiên
-        if ($result_unique->num_rows > 0) {
-            $random_suffix = mt_rand(100, 999);
-            $custom_order_id = $custom_order_id . $random_suffix;
-        }
-    }
-    
-    // Ghi log thông tin trước khi insert
-    $log_info = "Attempting to insert order with user_id: $user_id\n";
-    $log_info .= "Name: $fullname\n";
-    $log_info .= "Total: $totalAmount\n";
-    file_put_contents('order_debug.log', date('Y-m-d H:i:s') . " - INSERT DATA: " . $log_info, FILE_APPEND);
-    
-    // Tạo đơn hàng mới với custom_order_id nếu có
-    try {
-        // Approach 1: Try with custom_order_id if available
-        if ($custom_order_id !== null) {
-            try {
-                $sql = "INSERT INTO orders (user_id, shipping_name, shipping_address, shipping_phone, shipping_city, total_amount, payment_method, status, order_date, custom_order_id) 
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                $stmt = $conn->prepare($sql);
-                
-                if (!$stmt) {
-                    throw new Exception("Custom order ID approach failed: " . $conn->error);
-                }
-                
-                // Correct parameter binding with 10 parameters - make sure types match the column types
-                $stmt->bind_param("issssdssss", $user_id, $fullname, $address, $phone, $city, $totalAmount, $payment, $status, $order_date, $custom_order_id);
-                $success = $stmt->execute();
-                
-                if (!$success) {
-                    throw new Exception("Custom order ID execute failed: " . $stmt->error);
-                }
-                
-                $order_id = $conn->insert_id;
-                
-                // Save custom_order_id to session
-                $_SESSION['custom_order_id'] = $custom_order_id;
-            } catch (Exception $e) {
-                // Log error but continue to fallback approach
-                error_log("Error with first approach: " . $e->getMessage());
-                
-                // Fallback approach: Create order without custom_order_id
-                $sql = "INSERT INTO orders (user_id, shipping_name, shipping_address, shipping_phone, shipping_city, total_amount, payment_method, status, order_date) 
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                $stmt = $conn->prepare($sql);
-                
-                if (!$stmt) {
-                    throw new Exception("Fallback prepare failed: " . $conn->error);
-                }
-                
-                $stmt->bind_param("issssdsss", $user_id, $fullname, $address, $phone, $city, $totalAmount, $payment, $status, $order_date);
-                $success = $stmt->execute();
-                
-                if (!$success) {
-                    throw new Exception("Fallback execute failed: " . $stmt->error);
-                }
-                
-                $order_id = $conn->insert_id;
-                
-                // Try to update the custom_order_id afterwards
-                try {
-                    $update_sql = "UPDATE orders SET custom_order_id = ? WHERE id = ?";
-                    $update_stmt = $conn->prepare($update_sql);
-                    $update_stmt->bind_param("si", $custom_order_id, $order_id);
-                    $update_stmt->execute();
-                    $_SESSION['custom_order_id'] = $custom_order_id;
-                } catch (Exception $updateEx) {
-                    // If update fails, just log it but continue
-                    error_log("Failed to update custom_order_id: " . $updateEx->getMessage());
-                }
-            }
         } else {
-            // Simple approach for when no custom_order_id is available
-            $sql = "INSERT INTO orders (user_id, shipping_name, shipping_address, shipping_phone, shipping_city, total_amount, payment_method, status, order_date) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            $stmt = $conn->prepare($sql);
-            
-            if (!$stmt) {
-                throw new Exception("Simple prepare failed: " . $conn->error);
-            }
-            
-            $stmt->bind_param("issssdsss", $user_id, $fullname, $address, $phone, $city, $totalAmount, $payment, $status, $order_date);
-            $success = $stmt->execute();
-            
-            if (!$success) {
-                throw new Exception("Simple execute failed: " . $stmt->error);
-            }
-            
-            $order_id = $conn->insert_id;
+            // User: ORDER + YYYYMMDDHHMMSS + 3 random digits
+            $timestamp = date('YmdHis');
+            $random_suffix = mt_rand(100, 999);
+            $custom_order_id = "ORDER" . $timestamp . $random_suffix;
         }
-    } catch (Exception $mainEx) {
-        // If all approaches fail, rethrow the exception
-        throw new Exception("All order creation approaches failed: " . $mainEx->getMessage());
+        
+        // Sử dụng custom_order_id làm order_number luôn
+        $order_number = $custom_order_id;
+        
+        try {
+            // Thử insert trực tiếp
+            $sql = "INSERT INTO orders (user_id, shipping_name, shipping_address, shipping_phone, shipping_city, total_amount, payment_method, status, order_date, custom_order_id, order_number) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            
+            $stmt = $conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Prepare failed: " . $conn->error);
+            }
+            
+            $stmt->bind_param("issssdsssss", $user_id, $fullname, $address, $phone, $city, $totalAmount, $payment, $status, $order_date, $custom_order_id, $order_number);
+            
+            if ($stmt->execute()) {
+                $success = true;
+                $order_id = $conn->insert_id;
+                $_SESSION['custom_order_id'] = $custom_order_id;
+            } else {
+                // Nếu lỗi là do duplicate key (mã đơn hàng trùng), thử lại
+                if ($conn->errno == 1062) { // MySQL error code for duplicate entry
+                    $retry_count++;
+                    continue;
+                } else {
+                    throw new Exception("Execute failed: " . $stmt->error);
+                }
+            }
+        } catch (Exception $e) {
+            // Nếu lỗi không phải do duplicate key, ném ngoại lệ
+            throw $e;
+        }
+        
+    } while (!$success && $retry_count < $max_retries);
+    
+    if (!$success) {
+        throw new Exception("Failed to generate unique order ID after $max_retries attempts");
     }
     
-    // Ghi log kết quả insert
     $log_result = "Created order ID: $order_id";
     if ($custom_order_id !== null) {
         $log_result .= " (Custom ID: $custom_order_id)";
@@ -344,4 +271,4 @@ try {
     header("Location: checkout.php");
     exit;
 }
-?> 
+?>

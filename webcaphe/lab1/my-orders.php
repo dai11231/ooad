@@ -38,46 +38,13 @@ if ($check_date_column->num_rows == 0) {
 $query = "SELECT * FROM orders WHERE user_id = {$_SESSION['user_id']} ORDER BY order_date DESC";
 $result = $conn->query($query);
 $orders = [];
-if ($result->num_rows > 0) {
+if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $orders[] = $row;
     }
-    
-    // Cập nhật dữ liệu thiếu trong bảng
-    foreach ($orders as $order) {
-        $updates = [];
-        
-        // Kiểm tra và cập nhật các trường thiếu
-        if (empty($order['order_date']) && !empty($order['created_at'])) {
-            $updates[] = "order_date = '{$order['created_at']}'";
-        } elseif (empty($order['order_date'])) {
-            $now = date('Y-m-d H:i:s');
-            $updates[] = "order_date = '$now'";
-        }
-        
-        // Nếu không có total_amount, điền giá trị
-        if (empty($order['total_amount'])) {
-            // Truy vấn items để tính tổng
-            $items_query = "SELECT SUM(price * quantity) as total FROM order_items WHERE order_id = {$order['id']}";
-            $items_result = $conn->query($items_query);
-            if ($items_result->num_rows > 0) {
-                $total_row = $items_result->fetch_assoc();
-                $total = $total_row['total'] ?: 0;
-                $updates[] = "total_amount = $total";
-            } else {
-                $updates[] = "total_amount = 0";
-            }
-        }
-        
-        // Cập nhật dữ liệu nếu có thay đổi
-        if (!empty($updates)) {
-            $update_sql = "UPDATE orders SET " . implode(", ", $updates) . " WHERE id = {$order['id']}";
-            $conn->query($update_sql);
-        }
-    }
 }
 
-// Cập nhật order_number cho các đơn hàng chưa có
+// Chuẩn bị dữ liệu hiển thị (không update DB)
 foreach ($orders as &$order) {
     // Để hiển thị, ưu tiên sử dụng custom_order_id nếu có
     if (empty($order['display_id'])) {
@@ -90,20 +57,7 @@ foreach ($orders as &$order) {
         }
     }
     
-    if (empty($order['order_number'])) {
-        $order_id = $order['id'];
-        // Sử dụng order_date nếu có, nếu không dùng thời gian hiện tại
-        $date_str = !empty($order['order_date']) ? $order['order_date'] : date('YmdHis');
-        $new_order_number = 'ORDER' . date('YmdHis', strtotime($date_str)) . rand(100, 999);
-        
-        $stmt = $conn->prepare("UPDATE orders SET order_number = ? WHERE id = ?");
-        $stmt->bind_param("si", $new_order_number, $order_id);
-        $stmt->execute();
-        
-        $order['order_number'] = $new_order_number;
-    }
-    
-    // Kiểm tra và thiết lập giá trị mặc định cho các trường thiếu
+    // Kiểm tra và thiết lập giá trị mặc định cho các trường thiếu (chỉ để hiển thị)
     if (empty($order['created_at']) && !empty($order['order_date'])) {
         $order['created_at'] = $order['order_date'];
     } elseif (empty($order['created_at'])) {
