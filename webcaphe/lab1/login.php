@@ -84,136 +84,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập - Cà Phê Đậm Đà</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: url('images/coffee-bg.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .login-container {
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            padding: 40px;
-            width: 100%;
-            max-width: 400px;
-        }
-        
-        h1 {
-            font-family: 'Playfair Display', serif;
-            text-align: center;
-            color: #5d4037;
-            margin-bottom: 30px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #5d4037;
-        }
-        
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            box-sizing: border-box;
-            background-color: #f8f9fa;
-        }
-        
-        button {
-            background-color: #5d4037;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 12px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
-        
-        button:hover {
-            background-color: #3e2723;
-        }
-        
-        .error {
-            color: #e53935;
-            font-size: 14px;
-            margin-top: 10px;
-            text-align: center;
-            background-color: #ffebee;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ffcdd2;
-        }
-        
-        .register-link {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-        }
-        
-        .register-link a {
-            color: #5d4037;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .register-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div class="login-container">
-        <h1>Đăng Nhập</h1>
-        
-        <?php if (!empty($error)): ?>
-            <div class="error"><?php echo $error; ?></div>
-        <?php endif; ?>
-        
+<?php include 'includes/header.php'; ?>
+
+<div class="container" style="max-width:800px; margin:40px auto; padding:20px;">
+    <?php
+    // Display any flash messages set via set_message()
+    if (function_exists('display_message')) {
+        display_message();
+    }
+
+    if (!empty($error)) {
+        echo '<div class="alert alert-danger" style="margin-bottom:16px;">' . htmlspecialchars($error) . '</div>';
+    }
+    ?>
+
+    <div class="login-container" style="background-color: rgba(255,255,255,0.95); border-radius:10px; padding:32px; box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+        <h1 style="font-family: 'Playfair Display', serif; text-align:center; color:#5d4037; margin-bottom:20px;">Đăng Nhập</h1>
+
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-            <div class="form-group">
+            <div class="form-group" style="margin-bottom:16px;">
                 <label for="username">Email hoặc Tên đăng nhập:</label>
-                <input type="text" id="username" name="email" required>
+                <input type="text" id="username" name="email" required style="width:100%; padding:10px; border:1px solid #ddd; border-radius:4px;">
             </div>
-            
-            <div class="form-group">
+
+            <div class="form-group" style="margin-bottom:16px;">
                 <label for="password">Mật khẩu:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required style="width:100%; padding:10px; border:1px solid #ddd; border-radius:4px;">
             </div>
-            
-            <button type="submit">Đăng Nhập</button>
+
+            <button type="submit" style="background-color:#5d4037; color:#fff; border:none; padding:12px; border-radius:6px; width:100%; font-weight:600;">Đăng Nhập</button>
         </form>
-        
-        <div class="register-link">
-            Chưa có tài khoản? <a href="register.php">Đăng ký ngay</a>
+
+        <div class="register-link" style="text-align:center; margin-top:12px;">
+            Chưa có tài khoản? <a href="register.php" style="color:#5d4037; font-weight:600;">Đăng ký ngay</a>
         </div>
     </div>
-</body>
-</html> 
+</div>
+
+<?php include 'includes/footer.php'; ?>
