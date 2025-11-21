@@ -1,5 +1,13 @@
 <?php
+
 session_start();
+
+// If an after target is provided via GET (e.g. login.php?after=...), store it for post-login redirect
+if (!empty($_GET['after'])) {
+    // Basic sanitation: only allow relative URLs
+    $after = $_GET['after'];
+    $_SESSION['after_login_redirect'] = $after;
+}
 
 // Kết nối database
 $servername = "localhost";
@@ -55,7 +63,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['fullname'] = $user['fullname'] ?? $user['username'];
                 $_SESSION['role'] = $user['role'] ?? 'user';
                 
-                // Chuyển hướng đến trang chủ
+                // Redirect to the saved target after login if present
+                if (!empty($_SESSION['after_login_redirect'])) {
+                    $redirect = $_SESSION['after_login_redirect'];
+                    unset($_SESSION['after_login_redirect']);
+                    header("Location: " . $redirect);
+                    exit;
+                }
+
+                // Default: chuyển hướng đến trang chủ
                 header("Location: index.php");
                 exit;
             } else {

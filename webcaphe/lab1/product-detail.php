@@ -2,6 +2,9 @@
 session_start();
 include 'includes/db_connect.php';
 
+// Determine login state for frontend JS
+$isLoggedIn = !empty($_SESSION['user_id']);
+
 // Kiểm tra ID sản phẩm
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     // Chuyển hướng nếu không có ID
@@ -26,7 +29,6 @@ if ($result->num_rows === 0) {
     $product_not_found = true;
 } else {
     $product = $result->fetch_assoc();
-    
     // Lấy thêm sản phẩm liên quan dựa trên category_id
     if (isset($product['category_id']) && !empty($product['category_id'])) {
         $category_id = $product['category_id'];
@@ -504,6 +506,10 @@ $product_image = isset($product['image']) && !empty($product['image']) ? $produc
             </div>
         </nav>
     </header>
+    <script>
+        // Expose login state to JS (true/false)
+        var isLoggedIn = <?php echo $isLoggedIn ? 'true' : 'false'; ?>;
+    </script>
     
     <!-- Thông báo thêm vào giỏ hàng -->
     <div id="cart-message" style="display: none; background-color: #4CAF50; color: white; text-align: center; padding: 10px; position: fixed; top: 80px; left: 50%; transform: translateX(-50%); border-radius: 5px; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); width: 300px;"></div>
@@ -597,13 +603,26 @@ $product_image = isset($product['image']) && !empty($product['image']) ? $produc
         }
     }
 
-    function addToCart() {
-        var quantity = document.getElementById('quantity').value;
-        var id = "<?php echo $product['id']; ?>";
-        var name = "<?php echo addslashes($product['name']); ?>";
-        var price = <?php echo $product['price']; ?>;
-        var image = "<?php echo isset($product['image']) ? $product['image'] : 'images/default-product.jpg'; ?>";
-        
+    function addToCart(id = null, name = null, price = null, image = null) {
+        var quantityEl = document.getElementById('quantity');
+        var quantity = quantityEl ? quantityEl.value : 1;
+
+        // If called without parameters use current product data
+        if (!id) {
+            id = <?php echo json_encode($product['id']); ?>;
+            name = name || <?php echo json_encode($product['name']); ?>;
+            price = (typeof price !== 'undefined' && price !== null) ? price : <?php echo $product['price']; ?>;
+            image = image || <?php echo json_encode(isset($product['image']) ? $product['image'] : 'images/default-product.jpg'); ?>;
+        }
+
+        // If not logged in, redirect to login with after target
+        if (typeof isLoggedIn !== 'undefined' && !isLoggedIn) {
+            var params = `id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}&image=${encodeURIComponent(image)}&quantity=${encodeURIComponent(quantity)}&action=add`;
+            var target = 'add-to-cart.php?' + params;
+            window.location.href = 'login.php?after=' + encodeURIComponent(target);
+            return;
+        }
+
         // Sử dụng AJAX thay vì chuyển trang
         fetch('process-cart.php', {
             method: 'POST',
@@ -621,17 +640,17 @@ $product_image = isset($product['image']) && !empty($product['image']) ? $produc
                 data.cart.forEach((item, index) => {
                     console.log(`Sản phẩm ${index + 1}: ID=${item.id} (${typeof item.id}), Tên=${item.name}`);
                 });
-                
+
                 // Cập nhật localStorage
                 localStorage.setItem("cart", JSON.stringify(data.cart));
-                
+
                 // Cập nhật số lượng trong biểu tượng giỏ hàng
                 const cartCountElement = document.querySelector(".cart-count");
                 if (cartCountElement) {
                     cartCountElement.textContent = data.count;
                     cartCountElement.style.display = data.count > 0 ? 'inline-flex' : 'none';
                 }
-                
+
                 // Hiển thị thông báo
                 const messageElement = document.getElementById('cart-message');
                 if (messageElement) {
