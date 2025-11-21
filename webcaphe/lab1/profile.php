@@ -16,6 +16,9 @@ $error_msg = '';
 if (isset($_GET['updated'])) {
     $success_msg = "Thông tin cá nhân đã được cập nhật";
 }
+if (isset($_GET['password_updated'])) {
+    $success_msg = "Mật khẩu đã được cập nhật thành công";
+}
 
 // Lấy thông tin người dùng
 $user_query = $conn->query("SELECT * FROM users WHERE id = " . intval($user_id));
@@ -27,56 +30,79 @@ $user_query->free();
 
 // Xử lý cập nhật thông tin
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $fullname = isset($_POST['fullname']) ? trim($_POST['fullname']) : '';
-    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-    $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
-    $current_password = isset($_POST['current_password']) ? trim($_POST['current_password']) : '';
-    $new_password = isset($_POST['new_password']) ? trim($_POST['new_password']) : '';
-    $confirm_password = isset($_POST['confirm_password']) ? trim($_POST['confirm_password']) : '';
-    
-    // Cập nhật thông tin cơ bản (khi có fullname, email, phone)
-    if (!empty($fullname) && !empty($email) && !empty($phone)) {
-        $update_stmt = $conn->prepare("UPDATE users SET fullname = ?, email = ?, phone = ? WHERE id = ?");
-        $update_stmt->bind_param("sssi", $fullname, $email, $phone, $user_id);
+    // Xử lý cập nhật thông tin cá nhân
+    if (isset($_POST['update_profile'])) {
+        $fullname = isset($_POST['fullname']) ? trim($_POST['fullname']) : '';
+        $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+        $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
         
-        if ($update_stmt->execute()) {
-            $_SESSION['fullname'] = $fullname;
-            $update_stmt->close();
-            
-            // Cập nhật recipient_name và phone trong bảng addresses
-            $addr_stmt = $conn->prepare("UPDATE addresses SET recipient_name = ?, phone = ? WHERE user_id = ?");
-            if ($addr_stmt) {
-                $addr_stmt->bind_param("ssi", $fullname, $phone, $user_id);
-                $addr_stmt->execute();
-                $addr_stmt->close();
-            }
-            
-            // Redirect để reload trang
-            header("Location: profile.php?updated=1");
-            exit;
+        if (empty($fullname) || empty($email) || empty($phone)) {
+            $error_msg = "Vui lòng điền đầy đủ thông tin.";
         } else {
-            $error_msg = "Lỗi cập nhật: " . $conn->error;
-            $update_stmt->close();
+            $update_stmt = $conn->prepare("UPDATE users SET fullname = ?, email = ?, phone = ? WHERE id = ?");
+            $update_stmt->bind_param("sssi", $fullname, $email, $phone, $user_id);
+            
+            if ($update_stmt->execute()) {
+                $_SESSION['fullname'] = $fullname;
+                $update_stmt->close();
+                
+                // Cập nhật recipient_name và phone trong bảng addresses
+                $addr_stmt = $conn->prepare("UPDATE addresses SET recipient_name = ?, phone = ? WHERE user_id = ?");
+                if ($addr_stmt) {
+                    $addr_stmt->bind_param("ssi", $fullname, $phone, $user_id);
+                    $addr_stmt->execute();
+                    $addr_stmt->close();
+                }
+                
+                // Redirect để reload trang
+                header("Location: profile.php?updated=1");
+                exit;
+            } else {
+                $error_msg = "Lỗi cập nhật: " . $conn->error;
+                $update_stmt->close();
+            }
         }
     }
     
-    // Đổi mật khẩu (chỉ khi fullname rỗng = form mật khẩu)
-    if (empty($fullname) && !empty($current_password) && !empty($new_password) && !empty($confirm_password)) {
-        if ($new_password !== $confirm_password) {
+    // Xử lý đổi mật khẩu
+    if (isset($_POST['change_password'])) {
+        $current_password = isset($_POST['current_password']) ? trim($_POST['current_password']) : '';
+        $new_password = isset($_POST['new_password']) ? trim($_POST['new_password']) : '';
+        $confirm_password = isset($_POST['confirm_password']) ? trim($_POST['confirm_password']) : '';
+        
+        if (empty($current_password) || empty($new_password) || empty($confirm_password)) {
+            $error_msg = "Vui lòng điền đầy đủ thông tin mật khẩu.";
+        } else if ($new_password !== $confirm_password) {
             $error_msg = "Mật khẩu mới không khớp";
-        } else if (!password_verify($current_password, $user['password'])) {
-            $error_msg = "Mật khẩu hiện tại không đúng";
         } else {
-            $hashed = password_hash($new_password, PASSWORD_DEFAULT);
-            $pwd_stmt = $conn->prepare("UPDATE users SET password = ? WHERE id = ?");
-            $pwd_stmt->bind_param("si", $hashed, $user_id);
-            
-            if ($pwd_stmt->execute()) {
-                $success_msg = "Mật khẩu đã được cập nhật";
+            // Verify current password (support both bcrypt and legacy SHA1)
+            $password_valid = false;
+            if (password_verify($current_password, $user['password'])) {
+                $password_valid = true;
             } else {
-                $error_msg = "Lỗi cập nhật mật khẩu: " . $conn->error;
+                // Check legacy SHA1
+                $hashed_input_password = '*' . strtoupper(sha1(sha1($current_password, true)));
+                if ($hashed_input_password === $user['password']) {
+                    $password_valid = true;
+                }
             }
-            $pwd_stmt->close();
+
+            if (!$password_valid) {
+                $error_msg = "Mật khẩu hiện tại không đúng";
+            } else {
+                $hashed = password_hash($new_password, PASSWORD_DEFAULT);
+                $pwd_stmt = $conn->prepare("UPDATE users SET password = ? WHERE id = ?");
+                $pwd_stmt->bind_param("si", $hashed, $user_id);
+                
+                if ($pwd_stmt->execute()) {
+                    // Redirect to avoid resubmission
+                    header("Location: profile.php?password_updated=1");
+                    exit;
+                } else {
+                    $error_msg = "Lỗi cập nhật mật khẩu: " . $conn->error;
+                }
+                $pwd_stmt->close();
+            }
         }
     }
 }
@@ -435,7 +461,7 @@ while ($row = $result->fetch_assoc()) {
                         </div>
                         
                         <div class="form-group">
-                            <button type="submit" class="payment-btn">Cập nhật thông tin</button>
+                            <button type="submit" name="update_profile" class="payment-btn">Cập nhật thông tin</button>
                         </div>
                     </form>
                 </div>
@@ -461,7 +487,7 @@ while ($row = $result->fetch_assoc()) {
                         </div>
                         
                         <div class="form-group">
-                            <button type="submit" class="payment-btn">Đổi mật khẩu</button>
+                            <button type="submit" name="change_password" class="payment-btn">Đổi mật khẩu</button>
                         </div>
                     </form>
                 </div>
@@ -502,4 +528,4 @@ while ($row = $result->fetch_assoc()) {
     
     <?php include 'includes/footer.php'; ?>
 </body>
-</html> 
+</html>
