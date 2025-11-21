@@ -713,19 +713,31 @@ if ($categories_result->num_rows > 0) {
         })
         .then(response => response.json())
         .then(data => {
+            if (data && data.login_required) {
+                // server indicates login is required
+                if (data.redirect) {
+                    window.location.href = data.redirect;
+                } else {
+                    // fallback: build redirect to login with after target
+                    var params = `action=add&id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}&image=${encodeURIComponent(image)}&quantity=1`;
+                    window.location.href = 'login.php?after=' + encodeURIComponent('process-cart.php?' + params);
+                }
+                return;
+            }
+
             if (data.success) {
                 console.log("Kết quả thêm vào giỏ hàng:", data);
-                
+
                 // Cập nhật localStorage
                 localStorage.setItem("cart", JSON.stringify(data.cart));
-                
+
                 // Cập nhật số lượng trong biểu tượng giỏ hàng
                 const cartCountElement = document.querySelector(".cart-count");
                 if (cartCountElement) {
                     cartCountElement.textContent = data.count;
                     cartCountElement.style.display = data.count > 0 ? 'inline-flex' : 'none';
                 }
-                
+
                 // Hiển thị thông báo
                 const messageElement = document.getElementById('cart-message');
                 if (messageElement) {

@@ -33,6 +33,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Lấy giỏ hàng hiện tại
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 
+// SECURITY: require login for cart operations
+if (empty($_SESSION['user_id'])) {
+    if ($ajax) {
+        header('Content-Type: application/json');
+        echo json_encode([
+            'success' => false,
+            'login_required' => true,
+            'redirect' => 'login.php?after=' . urlencode((isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING'] ? 'process-cart.php?' . $_SERVER['QUERY_STRING'] : 'process-cart.php?action=' . $action))
+        ]);
+        exit;
+    } else {
+        // Save target and redirect to login
+        $target = (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']) ? 'process-cart.php?' . $_SERVER['QUERY_STRING'] : 'process-cart.php?action=' . $action;
+        $_SESSION['after_login_redirect'] = $target;
+        header('Location: login.php');
+        exit;
+    }
+}
+
 // Xử lý các hành động
 $message = '';
 $redirectUrl = 'cart.php';

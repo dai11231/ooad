@@ -117,6 +117,19 @@ function addToCart(id, name, price, image, quantity = 1) {
         return;
     }
 
+    // If user is not logged in (global var from header), redirect to login preserving target
+    try {
+        if (typeof isLoggedIn !== 'undefined' && !isLoggedIn) {
+            var params = `id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}&image=${encodeURIComponent(image)}&quantity=${encodeURIComponent(quantity)}&action=add`;
+            var target = 'add-to-cart.php?' + params;
+            window.location.href = 'login.php?after=' + encodeURIComponent(target);
+            return;
+        }
+    } catch (e) {
+        // if header not included, fall through to AJAX (server will enforce login)
+        console.warn('isLoggedIn check failed', e);
+    }
+
     // Gửi dữ liệu thông qua AJAX
     fetch("add-to-cart.php", {
         method: "POST",
@@ -131,6 +144,18 @@ function addToCart(id, name, price, image, quantity = 1) {
     })
         .then((response) => response.json())
         .then((data) => {
+            // If server says login required, redirect
+            if (data && data.login_required) {
+                if (data.redirect) {
+                    window.location.href = data.redirect;
+                    return;
+                }
+                // construct after target preserving the intended add action
+                var params = `action=add&id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}&image=${encodeURIComponent(image)}&quantity=${encodeURIComponent(quantity)}`;
+                window.location.href = 'login.php?after=' + encodeURIComponent('process-cart.php?' + params);
+                return;
+            }
+
             if (data.success) {
                 console.log("Kết quả thêm vào giỏ hàng:", data);
 

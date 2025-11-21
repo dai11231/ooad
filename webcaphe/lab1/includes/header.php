@@ -15,6 +15,10 @@ require_once __DIR__ . '/config.php';
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <script>
+        // Global flag for login state (used by client-side add-to-cart logic)
+        var isLoggedIn = <?php echo isset($_SESSION['user_id']) ? 'true' : 'false'; ?>;
+        </script>
     <link rel="stylesheet" href="css/font-fix.css">
     <style>
     /* Reset CSS */

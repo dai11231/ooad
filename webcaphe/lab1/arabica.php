@@ -499,10 +499,20 @@ if ($result->num_rows > 0) {
             })
             .then(response => response.json())
             .then(data => {
+                if (data && data.login_required) {
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                    } else {
+                        var params = `action=add&id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}&image=${encodeURIComponent(image)}&quantity=1`;
+                        window.location.href = 'login.php?after=' + encodeURIComponent('process-cart.php?' + params);
+                    }
+                    return;
+                }
+
                 if (data.success) {
                     // Hiển thị thông báo
                     showNotification(`Đã thêm "${name}" vào giỏ hàng!`);
-                    
+
                     // Cập nhật số lượng sản phẩm trong giỏ hàng trên giao diện
                     updateCartCount(data.count);
                 } else {
