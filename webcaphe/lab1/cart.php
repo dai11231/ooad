@@ -7,6 +7,12 @@ $page_title = "Giỏ hàng";
 // Lấy giỏ hàng từ session
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 
+// Hiển thị thông báo nếu có sản phẩm bị xóa bởi admin
+if(isset($_SESSION['cart_message'])) {
+    $cart_message = $_SESSION['cart_message'];
+    unset($_SESSION['cart_message']);
+}
+
 // Kiểm tra và lọc bỏ các sản phẩm đã bị xóa
 $removedProducts = validateCartProducts($cart, $conn);
 
@@ -772,6 +778,16 @@ foreach($cart as $item) {
                 <button class="close-alert" onclick="this.parentElement.style.display='none';">&times;</button>
             </div>
             <?php unset($_SESSION['removed_products_message']); ?>
+        <?php endif; ?>
+        
+        <?php if(isset($cart_message)): ?>
+            <div class="alert-notification alert-<?php echo $cart_message['type']; ?>">
+                <i class="fas fa-<?php echo $cart_message['type'] === 'warning' ? 'exclamation-triangle' : 'info-circle'; ?>"></i>
+                <div class="alert-content">
+                    <p><?php echo $cart_message['message']; ?></p>
+                </div>
+                <button class="close-alert" onclick="this.parentElement.style.display='none';">&times;</button>
+            </div>
         <?php endif; ?>
         
         <?php if(isset($_SESSION['adjusted_products_message'])): ?>

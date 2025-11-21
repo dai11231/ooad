@@ -12785,3 +12785,263 @@
 2025-11-21 22:16:22 - Check cart session: false, count: 0
 2025-11-21 22:21:17 - Check cart session: false, count: 0
 2025-11-21 22:21:30 - Check cart session: false, count: 0
+2025-11-21 22:23:51 - Check cart session: false, count: 0
+2025-11-21 22:24:40 - Check cart session: false, count: 0
+2025-11-21 22:24:41 - Check cart session: false, count: 0
+2025-11-21 22:24:47 - Check cart session: false, count: 0
+2025-11-21 22:26:13 - Check cart session: true, count: 1
+2025-11-21 22:26:15 - Check cart session: true, count: 1
+2025-11-21 22:26:17 - Check cart session: true, count: 1
+2025-11-21 22:26:54 - Check cart session: false, count: 0
+2025-11-21 22:27:03 - Check cart session: false, count: 0
+2025-11-21 22:27:12 - Check cart session: false, count: 0
+2025-11-21 22:27:14 - Check cart session: false, count: 0
+2025-11-21 22:27:25 - Check cart session: false, count: 0
+2025-11-21 22:27:37 - Check cart session: false, count: 0
+2025-11-21 22:27:48 - Check cart session: false, count: 0
+2025-11-21 22:27:51 - Check cart session: false, count: 0
+2025-11-21 22:27:57 - Check cart session: false, count: 0
+2025-11-21 22:27:58 - Check cart session: false, count: 0
+2025-11-21 22:28:01 - Check cart session: false, count: 0
+2025-11-21 22:28:04 - Check cart session: false, count: 0
+2025-11-21 22:28:06 - Check cart session: false, count: 0
+2025-11-21 22:28:07 - Check cart session: false, count: 0
+2025-11-21 22:29:44 - Check cart session: false, count: 0
+2025-11-21 22:29:55 - Check cart session: false, count: 0
+2025-11-21 22:30:05 - Check cart session: false, count: 0
+2025-11-21 22:30:10 - Check cart session: false, count: 0
+2025-11-21 22:30:22 - Check cart session: false, count: 0
+2025-11-21 22:30:37 - Check cart session: false, count: 0
+2025-11-21 22:30:58 - Check cart session: false, count: 0
+2025-11-21 22:31:25 - Check cart session: false, count: 0
+2025-11-21 22:31:28 - Check cart session: false, count: 0
+2025-11-21 22:31:30 - Check cart session: false, count: 0
+2025-11-21 22:31:45 - Check cart session: false, count: 0
+2025-11-21 22:31:48 - Check cart session: false, count: 0
+2025-11-21 22:32:01 - Check cart session: false, count: 0
+2025-11-21 22:32:02 - Check cart session: false, count: 0
+2025-11-21 22:32:14 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:14 - Synced cart count: 0
+2025-11-21 22:32:14 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:14 - Synced cart count: 0
+2025-11-21 22:32:14 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:14 - Synced cart count: 0
+2025-11-21 22:32:15 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:15 - Synced cart count: 0
+2025-11-21 22:32:15 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:15 - Synced cart count: 0
+2025-11-21 22:32:15 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:15 - Synced cart count: 0
+2025-11-21 22:32:15 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:15 - Synced cart count: 0
+2025-11-21 22:32:15 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:15 - Synced cart count: 0
+2025-11-21 22:32:15 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:15 - Synced cart count: 0
+2025-11-21 22:32:15 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:15 - Synced cart count: 0
+2025-11-21 22:32:15 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:15 - Synced cart count: 0
+2025-11-21 22:32:16 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:16 - Synced cart count: 0
+2025-11-21 22:32:16 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:16 - Synced cart count: 0
+2025-11-21 22:32:16 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:16 - Synced cart count: 0
+2025-11-21 22:32:16 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:16 - Synced cart count: 0
+2025-11-21 22:32:16 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:16 - Synced cart count: 0
+2025-11-21 22:32:16 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:16 - Synced cart count: 0
+2025-11-21 22:32:17 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:17 - Synced cart count: 0
+2025-11-21 22:32:17 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:17 - Synced cart count: 0
+2025-11-21 22:32:17 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:17 - Synced cart count: 0
+2025-11-21 22:32:17 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:17 - Synced cart count: 0
+2025-11-21 22:32:17 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:17 - Synced cart count: 0
+2025-11-21 22:32:17 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:17 - Synced cart count: 0
+2025-11-21 22:32:17 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:17 - Synced cart count: 0
+2025-11-21 22:32:18 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:18 - Synced cart count: 0
+2025-11-21 22:32:18 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:18 - Synced cart count: 0
+2025-11-21 22:32:18 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:18 - Synced cart count: 0
+2025-11-21 22:32:18 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:18 - Synced cart count: 0
+2025-11-21 22:32:18 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:18 - Synced cart count: 0
+2025-11-21 22:32:18 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:18 - Synced cart count: 0
+2025-11-21 22:32:18 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:18 - Synced cart count: 0
+2025-11-21 22:32:19 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:19 - Synced cart count: 0
+2025-11-21 22:32:19 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:19 - Synced cart count: 0
+2025-11-21 22:32:19 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:19 - Synced cart count: 0
+2025-11-21 22:32:19 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:19 - Synced cart count: 0
+2025-11-21 22:32:19 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:19 - Synced cart count: 0
+2025-11-21 22:32:19 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:19 - Synced cart count: 0
+2025-11-21 22:32:19 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:19 - Synced cart count: 0
+2025-11-21 22:32:20 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:20 - Synced cart count: 0
+2025-11-21 22:32:20 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:20 - Synced cart count: 0
+2025-11-21 22:32:20 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:20 - Synced cart count: 0
+2025-11-21 22:32:20 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:20 - Synced cart count: 0
+2025-11-21 22:32:20 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:20 - Synced cart count: 0
+2025-11-21 22:32:20 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:20 - Synced cart count: 0
+2025-11-21 22:32:20 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:20 - Synced cart count: 0
+2025-11-21 22:32:21 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:21 - Synced cart count: 0
+2025-11-21 22:32:21 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:21 - Synced cart count: 0
+2025-11-21 22:32:21 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:21 - Synced cart count: 0
+2025-11-21 22:32:21 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:21 - Synced cart count: 0
+2025-11-21 22:32:21 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:21 - Synced cart count: 0
+2025-11-21 22:32:21 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:21 - Synced cart count: 0
+2025-11-21 22:32:21 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:21 - Synced cart count: 0
+2025-11-21 22:32:22 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:22 - Synced cart count: 0
+2025-11-21 22:32:22 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:22 - Synced cart count: 0
+2025-11-21 22:32:22 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:22 - Synced cart count: 0
+2025-11-21 22:32:22 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:32:22 - Synced cart count: 0
+2025-11-21 22:36:35 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:35 - Synced cart count: 0
+2025-11-21 22:36:35 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:35 - Synced cart count: 0
+2025-11-21 22:36:35 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:35 - Synced cart count: 0
+2025-11-21 22:36:35 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:35 - Synced cart count: 0
+2025-11-21 22:36:35 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:35 - Synced cart count: 0
+2025-11-21 22:36:36 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:36 - Synced cart count: 0
+2025-11-21 22:36:36 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:36 - Synced cart count: 0
+2025-11-21 22:36:36 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:36 - Synced cart count: 0
+2025-11-21 22:36:36 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:36 - Synced cart count: 0
+2025-11-21 22:36:36 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:36 - Synced cart count: 0
+2025-11-21 22:36:36 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:36 - Synced cart count: 0
+2025-11-21 22:36:37 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:37 - Synced cart count: 0
+2025-11-21 22:36:37 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:37 - Synced cart count: 0
+2025-11-21 22:36:37 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:37 - Synced cart count: 0
+2025-11-21 22:36:37 - Sync cart data: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:37 - Synced cart count: 0
+2025-11-21 22:36:40 - Check cart session: false, count: 0
+2025-11-21 22:36:40 - Sync cart request received, POST data: Array
+(
+    [cart_data] => [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+)
+
+2025-11-21 22:36:40 - Cart data received: [{"id":75,"name":"kkk","price":100000,"image":"","quantity":1}]
+2025-11-21 22:36:40 - Sync cart success: 1 sản phẩm
+2025-11-21 22:36:42 - Check cart session: true, count: 1
+2025-11-21 22:36:58 - Check cart session: true, count: 1
+2025-11-21 22:46:37 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:37 - Synced cart count: 0
+2025-11-21 22:46:37 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:37 - Synced cart count: 0
+2025-11-21 22:46:37 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:37 - Synced cart count: 0
+2025-11-21 22:46:37 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:37 - Synced cart count: 0
+2025-11-21 22:46:38 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:38 - Synced cart count: 0
+2025-11-21 22:46:38 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:38 - Synced cart count: 0
+2025-11-21 22:46:38 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:38 - Synced cart count: 0
+2025-11-21 22:46:38 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:38 - Synced cart count: 0
+2025-11-21 22:46:38 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:38 - Synced cart count: 0
+2025-11-21 22:46:38 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:38 - Synced cart count: 0
+2025-11-21 22:46:38 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:38 - Synced cart count: 0
+2025-11-21 22:46:38 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:38 - Synced cart count: 0
+2025-11-21 22:46:38 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:38 - Synced cart count: 0
+2025-11-21 22:46:39 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:39 - Synced cart count: 0
+2025-11-21 22:46:39 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:39 - Synced cart count: 0
+2025-11-21 22:46:39 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:39 - Synced cart count: 0
+2025-11-21 22:46:39 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:39 - Synced cart count: 0
+2025-11-21 22:46:39 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:39 - Synced cart count: 0
+2025-11-21 22:46:39 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:39 - Synced cart count: 0
+2025-11-21 22:46:39 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:39 - Synced cart count: 0
+2025-11-21 22:46:39 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:39 - Synced cart count: 0
+2025-11-21 22:46:39 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:39 - Synced cart count: 0
+2025-11-21 22:46:40 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:40 - Synced cart count: 0
+2025-11-21 22:46:40 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:40 - Synced cart count: 0
+2025-11-21 22:46:40 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:40 - Synced cart count: 0
+2025-11-21 22:46:40 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:40 - Synced cart count: 0
+2025-11-21 22:46:40 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:40 - Synced cart count: 0
+2025-11-21 22:46:40 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:40 - Synced cart count: 0
+2025-11-21 22:46:40 - Sync cart data: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:40 - Synced cart count: 0
+2025-11-21 22:46:40 - Check cart session: false, count: 0
+2025-11-21 22:46:40 - Sync cart request received, POST data: Array
+(
+    [cart_data] => [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+)
+
+2025-11-21 22:46:40 - Cart data received: [{"id":76,"name":"qqqq","price":100000,"image":"","quantity":1}]
+2025-11-21 22:46:40 - Sync cart success: 1 sản phẩm
+2025-11-21 22:51:57 - Check cart session: false, count: 0
+2025-11-21 22:51:58 - Check cart session: false, count: 0
+2025-11-21 22:51:59 - Check cart session: false, count: 0
+2025-11-21 22:52:13 - Check cart session: false, count: 0
+2025-11-21 22:53:24 - Check cart session: false, count: 0
+2025-11-21 22:53:27 - Check cart session: false, count: 0
+2025-11-21 22:53:29 - Check cart session: false, count: 0

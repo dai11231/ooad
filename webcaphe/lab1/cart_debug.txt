@@ -15765,3 +15765,409 @@
     [quantity] => 1
 )
 
+2025-11-21 22:24:13 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 22
+            [name] => Robusta Ấn Độ (Indian Robusta Cherry)
+            [price] => 350000
+            [image] => uploads/products/product_6805da1d277cd.png
+            [quantity] => 1
+        )
+
+    [1] => Array
+        (
+            [id] => 24
+            [name] => Robusta Indonesia (Java, Sumatra)
+            [price] => 300000
+            [image] => uploads/products/product_682041dee6967.jpg
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:24:13 - Processing item: Array
+(
+    [id] => 22
+    [name] => Robusta Ấn Độ (Indian Robusta Cherry)
+    [price] => 350000
+    [image] => uploads/products/product_6805da1d277cd.png
+    [quantity] => 1
+)
+
+2025-11-21 22:24:13 - Processing item: Array
+(
+    [id] => 24
+    [name] => Robusta Indonesia (Java, Sumatra)
+    [price] => 300000
+    [image] => uploads/products/product_682041dee6967.jpg
+    [quantity] => 1
+)
+
+2025-11-21 22:24:51 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 20
+            [name] => Robusta Uganda
+            [price] => 200000
+            [image] => uploads/products/product_6805d87d6a14b.jpg
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:24:51 - Processing item: Array
+(
+    [id] => 20
+    [name] => Robusta Uganda
+    [price] => 200000
+    [image] => uploads/products/product_6805d87d6a14b.jpg
+    [quantity] => 1
+)
+
+2025-11-21 22:26:20 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 20
+            [name] => Robusta Uganda
+            [price] => 200000
+            [image] => uploads/products/product_6805d87d6a14b.jpg
+            [quantity] => 1
+        )
+
+    [1] => Array
+        (
+            [id] => 75
+            [name] => ưqưe
+            [price] => 99999999.99
+            [image] => 
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:26:20 - Processing item: Array
+(
+    [id] => 20
+    [name] => Robusta Uganda
+    [price] => 200000
+    [image] => uploads/products/product_6805d87d6a14b.jpg
+    [quantity] => 1
+)
+
+2025-11-21 22:26:20 - Processing item: Array
+(
+    [id] => 75
+    [name] => ưqưe
+    [price] => 99999999.99
+    [image] => 
+    [quantity] => 1
+)
+
+2025-11-21 22:27:17 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 75
+            [name] => ưqưe
+            [price] => 99999999.99
+            [image] => 
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:27:17 - Processing item: Array
+(
+    [id] => 75
+    [name] => ưqưe
+    [price] => 99999999.99
+    [image] => 
+    [quantity] => 1
+)
+
+2025-11-21 22:29:34 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 20
+            [name] => Robusta Uganda
+            [price] => 200000
+            [image] => uploads/products/product_6805d87d6a14b.jpg
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:29:34 - Processing item: Array
+(
+    [id] => 20
+    [name] => Robusta Uganda
+    [price] => 200000
+    [image] => uploads/products/product_6805d87d6a14b.jpg
+    [quantity] => 1
+)
+
+2025-11-21 22:29:47 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 20
+            [name] => Robusta Uganda
+            [price] => 200000
+            [image] => uploads/products/product_6805d87d6a14b.jpg
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:29:47 - Processing item: Array
+(
+    [id] => 20
+    [name] => Robusta Uganda
+    [price] => 200000
+    [image] => uploads/products/product_6805d87d6a14b.jpg
+    [quantity] => 1
+)
+
+2025-11-21 22:29:59 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 22
+            [name] => Robusta Ấn Độ (Indian Robusta Cherry)
+            [price] => 350000
+            [image] => uploads/products/product_6805da1d277cd.png
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:29:59 - Processing item: Array
+(
+    [id] => 22
+    [name] => Robusta Ấn Độ (Indian Robusta Cherry)
+    [price] => 350000
+    [image] => uploads/products/product_6805da1d277cd.png
+    [quantity] => 1
+)
+
+2025-11-21 22:30:15 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 27
+            [name] => Robusta Cameroon
+            [price] => 400000
+            [image] => uploads/products/product_68204e70a7ab8.jpg
+            [quantity] => 1
+        )
+
+    [1] => Array
+        (
+            [id] => 26
+            [name] => Robusta Congo (DRC – Democratic Republic of Congo)
+            [price] => 350000
+            [image] => uploads/products/product_68204dc0ae5fb.png
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:30:15 - Processing item: Array
+(
+    [id] => 27
+    [name] => Robusta Cameroon
+    [price] => 400000
+    [image] => uploads/products/product_68204e70a7ab8.jpg
+    [quantity] => 1
+)
+
+2025-11-21 22:30:15 - Processing item: Array
+(
+    [id] => 26
+    [name] => Robusta Congo (DRC – Democratic Republic of Congo)
+    [price] => 350000
+    [image] => uploads/products/product_68204dc0ae5fb.png
+    [quantity] => 1
+)
+
+2025-11-21 22:30:30 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 20
+            [name] => Robusta Uganda
+            [price] => 200000
+            [image] => uploads/products/product_6805d87d6a14b.jpg
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:30:30 - Processing item: Array
+(
+    [id] => 20
+    [name] => Robusta Uganda
+    [price] => 200000
+    [image] => uploads/products/product_6805d87d6a14b.jpg
+    [quantity] => 1
+)
+
+2025-11-21 22:30:50 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 20
+            [name] => Robusta Uganda
+            [price] => 200000
+            [image] => uploads/products/product_6805d87d6a14b.jpg
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:30:50 - Processing item: Array
+(
+    [id] => 20
+    [name] => Robusta Uganda
+    [price] => 200000
+    [image] => uploads/products/product_6805d87d6a14b.jpg
+    [quantity] => 1
+)
+
+2025-11-21 22:31:36 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 75
+            [name] => kkk
+            [price] => 100000
+            [image] => 
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:31:36 - Processing item: Array
+(
+    [id] => 75
+    [name] => kkk
+    [price] => 100000
+    [image] => 
+    [quantity] => 1
+)
+
+2025-11-21 22:32:05 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 75
+            [name] => kkk
+            [price] => 100000
+            [image] => 
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:32:05 - Processing item: Array
+(
+    [id] => 75
+    [name] => kkk
+    [price] => 100000
+    [image] => 
+    [quantity] => 1
+)
+
+2025-11-21 22:37:00 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 76
+            [name] => qqqq
+            [price] => 100000
+            [image] => 
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:37:00 - Processing item: Array
+(
+    [id] => 76
+    [name] => qqqq
+    [price] => 100000
+    [image] => 
+    [quantity] => 1
+)
+
+2025-11-21 22:46:22 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 76
+            [name] => qqqq
+            [price] => 100000
+            [image] => 
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:46:22 - Processing item: Array
+(
+    [id] => 76
+    [name] => qqqq
+    [price] => 100000
+    [image] => 
+    [quantity] => 1
+)
+
+2025-11-21 22:52:02 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 77
+            [name] => 123
+            [price] => 1000000
+            [image] => 
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:52:02 - Processing item: Array
+(
+    [id] => 77
+    [name] => 123
+    [price] => 1000000
+    [image] => 
+    [quantity] => 1
+)
+
+2025-11-21 22:53:31 - Cart in cart.php: Array
+(
+    [0] => Array
+        (
+            [id] => 78
+            [name] => qqqq
+            [price] => 100000
+            [image] => 
+            [quantity] => 1
+        )
+
+)
+
+2025-11-21 22:53:31 - Processing item: Array
+(
+    [id] => 78
+    [name] => qqqq
+    [price] => 100000
+    [image] => 
+    [quantity] => 1
+)
+
