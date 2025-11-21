@@ -400,3 +400,129 @@ Total: 350000
 2025-11-21 20:21:18 - ORDER CREATED: Created order ID: 15 (Custom ID: ORDER20251121202118)
 2025-11-21 20:21:18 - TRANSACTION COMPLETED
 2025-11-21 20:21:18 - VERIFICATION: Verified order exists - ID: 15 | User ID: 5 | Total: 350000.00
+2025-11-21 20:23:32 - PRE-ORDER: User ID: 7
+Email: dangngocdai08211@gmail.com
+Fullname: đài đặng
+2025-11-21 20:23:32 - INSERT DATA: Attempting to insert order with user_id: 7
+Name: đài đặng
+Total: 150000
+2025-11-21 20:23:32 - ORDER CREATED: Created order ID: 16 (Custom ID: ORDER20251121202332)
+2025-11-21 20:23:32 - TRANSACTION COMPLETED
+2025-11-21 20:23:32 - VERIFICATION: Verified order exists - ID: 16 | User ID: 7 | Total: 150000.00
+2025-11-21 20:23:45 - PRE-ORDER: User ID: 7
+Email: dangngocdai08211@gmail.com
+Fullname: đài đặng
+2025-11-21 20:23:45 - INSERT DATA: Attempting to insert order with user_id: 7
+Name: đài đặng
+Total: 200000
+2025-11-21 20:23:45 - ORDER CREATED: Created order ID: 17 (Custom ID: ORDER20251121202345)
+2025-11-21 20:23:45 - TRANSACTION COMPLETED
+2025-11-21 20:23:46 - VERIFICATION: Verified order exists - ID: 17 | User ID: 7 | Total: 200000.00
+2025-11-21 20:24:06 - PRE-ORDER: User ID: 6
+Email: dangngocdai08121@gmail.com
+Fullname: đài đặng
+2025-11-21 20:24:06 - INSERT DATA: Attempting to insert order with user_id: 6
+Name: đài đặng
+Total: 350000
+2025-11-21 20:24:06 - ORDER CREATED: Created order ID: 18 (Custom ID: ORDER20251121202406)
+2025-11-21 20:24:06 - TRANSACTION COMPLETED
+2025-11-21 20:24:06 - VERIFICATION: Verified order exists - ID: 18 | User ID: 6 | Total: 350000.00
+2025-11-21 20:24:28 - PRE-ORDER: User ID: 6
+Email: dangngocdai08121@gmail.com
+Fullname: đài đặng
+2025-11-21 20:24:28 - INSERT DATA: Attempting to insert order with user_id: 6
+Name: đài đặng
+Total: 150000
+2025-11-21 20:24:28 - ORDER CREATED: Created order ID: 19 (Custom ID: ORDER20251121202428)
+2025-11-21 20:24:28 - TRANSACTION COMPLETED
+2025-11-21 20:24:28 - VERIFICATION: Verified order exists - ID: 19 | User ID: 6 | Total: 150000.00
+2025-11-21 20:28:50 - PRE-ORDER: User ID: 7
+Email: dangngocdai08211@gmail.com
+Fullname: đài đặng
+2025-11-21 20:28:50 - INSERT DATA: Attempting to insert order with user_id: 7
+Name: đài đặng
+Total: 350000
+2025-11-21 20:28:50 - ORDER CREATED: Created order ID: 20 (Custom ID: ORDER20251121202850)
+2025-11-21 20:28:50 - TRANSACTION COMPLETED
+2025-11-21 20:28:50 - VERIFICATION: Verified order exists - ID: 20 | User ID: 7 | Total: 350000.00
+2025-11-21 20:29:12 - PRE-ORDER: User ID: 5
+Email: dangngocdai0811@gmail.com
+Fullname: đài đặng
+2025-11-21 20:29:12 - INSERT DATA: Attempting to insert order with user_id: 5
+Name: đài đặng
+Total: 150000
+2025-11-21 20:29:12 - ORDER CREATED: Created order ID: 21 (Custom ID: ORDER20251121202912)
+2025-11-21 20:29:12 - TRANSACTION COMPLETED
+2025-11-21 20:29:12 - VERIFICATION: Verified order exists - ID: 21 | User ID: 5 | Total: 150000.00
+2025-11-21 20:29:49 - PRE-ORDER: User ID: 8
+Email: dangngocdai081133@gmail.com
+Fullname: đài đặng
+2025-11-21 20:29:49 - INSERT DATA: Attempting to insert order with user_id: 8
+Name: đài đặng
+Total: 150000
+2025-11-21 20:29:49 - ORDER CREATED: Created order ID: 22 (Custom ID: ORDER20251121202949)
+2025-11-21 20:29:49 - TRANSACTION COMPLETED
+2025-11-21 20:29:49 - VERIFICATION: Verified order exists - ID: 22 | User ID: 8 | Total: 150000.00
+2025-11-21 20:30:15 - PRE-ORDER: User ID: 8
+Email: dangngocdai081133@gmail.com
+Fullname: đài đặng
+2025-11-21 20:30:15 - INSERT DATA: Attempting to insert order with user_id: 8
+Name: đài đặng
+Total: 700000
+2025-11-21 20:30:15 - ORDER CREATED: Created order ID: 23 (Custom ID: ORDER20251121203015)
+2025-11-21 20:30:15 - TRANSACTION COMPLETED
+2025-11-21 20:30:15 - VERIFICATION: Verified order exists - ID: 23 | User ID: 8 | Total: 700000.00
+2025-11-21 20:36:59 - PRE-ORDER: User ID: 9
+Email: dangngocdai08234211@gmail.com
+Fullname: đài đặng
+2025-11-21 20:36:59 - INSERT DATA: Attempting to insert order with user_id: 9
+Name: đài đặng
+Total: 150000
+2025-11-21 20:36:59 - ORDER CREATED: Created order ID: 24 (Custom ID: ORDER20251121203659)
+2025-11-21 20:36:59 - TRANSACTION COMPLETED
+2025-11-21 20:36:59 - VERIFICATION: Verified order exists - ID: 24 | User ID: 9 | Total: 150000.00
+2025-11-21 20:37:09 - PRE-ORDER: User ID: 9
+Email: dangngocdai08234211@gmail.com
+Fullname: đài đặng
+2025-11-21 20:37:09 - INSERT DATA: Attempting to insert order with user_id: 9
+Name: đài đặng
+Total: 200000
+2025-11-21 20:37:09 - ORDER CREATED: Created order ID: 25 (Custom ID: ORDER20251121203709)
+2025-11-21 20:37:09 - TRANSACTION COMPLETED
+2025-11-21 20:37:09 - VERIFICATION: Verified order exists - ID: 25 | User ID: 9 | Total: 200000.00
+2025-11-21 21:09:46 - PRE-ORDER: User ID: 5
+Email: dangngocdai0811@gmail.com
+Fullname: đài đặng
+2025-11-21 21:09:46 - INSERT DATA: Attempting to insert order with user_id: 5
+Name: đài đặng
+Total: 350000
+2025-11-21 21:09:46 - ORDER CREATED: Created order ID: 15 (Custom ID: ORDER20251121210946)
+2025-11-21 21:09:46 - TRANSACTION COMPLETED
+2025-11-21 21:09:46 - VERIFICATION: Verified order exists - ID: 15 | User ID: 5 | Total: 350000.00
+2025-11-21 21:09:57 - PRE-ORDER: User ID: 5
+Email: dangngocdai0811@gmail.com
+Fullname: đài đặng
+2025-11-21 21:09:57 - INSERT DATA: Attempting to insert order with user_id: 5
+Name: đài đặng
+Total: 200000
+2025-11-21 21:09:57 - ORDER CREATED: Created order ID: 16 (Custom ID: ORDER20251121210957)
+2025-11-21 21:09:57 - TRANSACTION COMPLETED
+2025-11-21 21:09:57 - VERIFICATION: Verified order exists - ID: 16 | User ID: 5 | Total: 200000.00
+2025-11-21 21:20:48 - PRE-ORDER: User ID: 5
+Email: dangngocdai0811@gmail.com
+Fullname: đài đặng
+2025-11-21 21:20:48 - INSERT DATA: Attempting to insert order with user_id: 5
+Name: đài đặng
+Total: 150000
+2025-11-21 21:20:48 - ORDER CREATED: Created order ID: 15 (Custom ID: ORDER20251121212048)
+2025-11-21 21:20:48 - TRANSACTION COMPLETED
+2025-11-21 21:20:48 - VERIFICATION: Verified order exists - ID: 15 | User ID: 5 | Total: 150000.00
+2025-11-21 21:22:26 - PRE-ORDER: User ID: 5
+Email: dangngocdai0811@gmail.com
+Fullname: đài đặng
+2025-11-21 21:22:26 - INSERT DATA: Attempting to insert order with user_id: 5
+Name: đài đặng
+Total: 200000
+2025-11-21 21:22:26 - ORDER CREATED: Created order ID: 16 (Custom ID: ORDER20251121212226)
+2025-11-21 21:22:26 - TRANSACTION COMPLETED
+2025-11-21 21:22:26 - VERIFICATION: Verified order exists - ID: 16 | User ID: 5 | Total: 200000.00

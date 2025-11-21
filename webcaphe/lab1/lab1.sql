@@ -118,46 +118,50 @@ INSERT INTO `orders` (`id`, `order_number`, `user_id`, `shipping_name`, `shippin
 CREATE TABLE `order_items` (
   `id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
+  `product_id` int(11) DEFAULT NULL,
   `product_name` varchar(100) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `price` decimal(10,2) NOT NULL
+  `price` decimal(10,2) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  KEY `order_id` (`order_id`),
+  KEY `product_id` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `order_items`
 --
 
-INSERT INTO `order_items` (`id`, `order_id`, `product_name`, `quantity`, `price`) VALUES
-(1, 1, 'Robusta Việt Nam (Cà phê Vối)', 1, 150000.00),
-(2, 3, 'Robusta Ấn Độ (Indian Robusta Cherry)', 2, 350000.00),
-(3, 3, 'Robusta Ấn Độ (Indian Robusta Cherry)', 2, 350000.00),
-(4, 5, 'Robusta Ấn Độ (Indian Robusta Cherry)', 1, 350000.00),
-(5, 5, 'Robusta Ấn Độ (Indian Robusta Cherry)', 1, 350000.00),
-(6, 6, 'Robusta Việt Nam (Cà phê Vối)', 1, 150000.00),
-(7, 6, 'Robusta Uganda', 1, 200000.00),
-(8, 6, 'Robusta Uganda', 1, 200000.00),
-(9, 7, 'Robusta Ấn Độ (Indian Robusta Cherry)', 1, 350000.00),
-(10, 7, 'Robusta Ấn Độ (Indian Robusta Cherry)', 1, 350000.00),
-(11, 8, 'Robusta Ấn Độ (Indian Robusta Cherry)', 2, 350000.00),
-(12, 8, 'Robusta Việt Nam (Cà phê Vối)', 1, 150000.00),
-(13, 8, 'Robusta Uganda', 1, 200000.00),
-(14, 9, 'Robusta Việt Nam (Cà phê Vối)', 1, 150000.00),
-(15, 10, 'Robusta Việt Nam (Cà phê Vối)', 1, 150000.00),
-(16, 11, 'Robusta Việt Nam (Cà phê Vối)', 2, 150000.00),
-(17, 11, 'Robusta Uganda', 1, 200000.00),
-(18, 11, 'Robusta Ấn Độ (Indian Robusta Cherry)', 1, 350000.00),
-(19, 12, 'Robusta Việt Nam (Cà phê Vối)', 1, 150000.00),
-(20, 12, 'Robusta Uganda', 1, 200000.00),
-(21, 13, 'Bourbon', 1, 300000.00),
-(22, 13, 'SL28', 1, 300000.00),
-(23, 14, 'Robusta Việt Nam (Cà phê Vối)', 2, 150000.00),
-(24, 14, 'Robusta Ấn Độ (Indian Robusta Cherry)', 2, 350000.00),
-(25, 14, 'Robusta Buôn Ma Thuột', 1, 150000.00),
-(26, 14, 'Robusta Brazil (Conilon)', 2, 350000.00),
-(27, 14, 'Robusta Uganda', 1, 200000.00),
-(28, 14, 'Robusta Indonesia (Java, Sumatra)', 1, 300000.00),
-(29, 14, 'Robusta Congo (DRC – Democratic Republic of Congo)', 1, 350000.00),
-(30, 14, 'Robusta Cameroon', 1, 400000.00);
+INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `product_name`, `quantity`, `price`, `image`) VALUES
+(1, 1, 21, 'Robusta Việt Nam (Cà phê Vối)', 1, 150000.00, 'uploads/products/product_6805d8b4a0501.jpg'),
+(2, 3, 22, 'Robusta Ấn Độ (Indian Robusta Cherry)', 2, 350000.00, 'uploads/products/product_6805da1d277cd.png'),
+(3, 3, 22, 'Robusta Ấn Độ (Indian Robusta Cherry)', 2, 350000.00, 'uploads/products/product_6805da1d277cd.png'),
+(4, 5, 22, 'Robusta Ấn Độ (Indian Robusta Cherry)', 1, 350000.00, 'uploads/products/product_6805da1d277cd.png'),
+(5, 5, 22, 'Robusta Ấn Độ (Indian Robusta Cherry)', 1, 350000.00, 'uploads/products/product_6805da1d277cd.png'),
+(6, 6, 22, 'Robusta Ấn Độ (Indian Robusta Cherry)', 1, 350000.00, 'uploads/products/product_6805da1d277cd.png'),
+(7, 6, 37, 'Bourbon', 1, 300000.00, 'uploads/products/product_68219596c2a5d.jpg'),
+(8, 6, 38, 'SL28', 1, 300000.00, 'uploads/products/product_682196070202f.jpg'),
+(9, 7, 23, 'Robusta Buôn Ma Thuột', 1, 150000.00, 'uploads/products/product_6820415606312.jpg'),
+(10, 7, 23, 'Robusta Buôn Ma Thuột', 1, 150000.00, 'uploads/products/product_6820415606312.jpg'),
+(11, 8, 23, 'Robusta Buôn Ma Thuột', 1, 150000.00, 'uploads/products/product_6820415606312.jpg'),
+(12, 8, 25, 'Robusta Brazil (Conilon)', 1, 350000.00, 'uploads/products/product_6820472686640.jpg'),
+(13, 9, 24, 'Robusta Indonesia (Java, Sumatra)', 1, 300000.00, 'uploads/products/product_682041dee6967.jpg'),
+(14, 9, 26, 'Robusta Congo (DRC – Democratic Republic of Congo)', 1, 350000.00, 'uploads/products/product_68204dc0ae5fb.png'),
+(15, 9, 27, 'Robusta Cameroon', 1, 400000.00, 'uploads/products/product_68204e70a7ab8.jpg'),
+(16, 10, 23, 'Robusta Buôn Ma Thuột', 1, 150000.00, 'uploads/products/product_6820415606312.jpg'),
+(17, 10, 22, 'Robusta Ấn Độ (Indian Robusta Cherry)', 1, 350000.00, 'uploads/products/product_6805da1d277cd.png'),
+(18, 11, 22, 'Robusta Ấn Độ (Indian Robusta Cherry)', 1, 350000.00, 'uploads/products/product_6805da1d277cd.png'),
+(19, 11, 23, 'Robusta Buôn Ma Thuột', 1, 150000.00, 'uploads/products/product_6820415606312.jpg'),
+(20, 12, 23, 'Robusta Buôn Ma Thuột', 1, 150000.00, 'uploads/products/product_6820415606312.jpg'),
+(21, 12, 22, 'Robusta Ấn Độ (Indian Robusta Cherry)', 1, 350000.00, 'uploads/products/product_6805da1d277cd.png'),
+(22, 13, 22, 'Robusta Ấn Độ (Indian Robusta Cherry)', 1, 350000.00, 'uploads/products/product_6805da1d277cd.png'),
+(23, 13, 23, 'Robusta Buôn Ma Thuột', 1, 150000.00, 'uploads/products/product_6820415606312.jpg'),
+(24, 14, 23, 'Robusta Buôn Ma Thuột', 1, 150000.00, 'uploads/products/product_6820415606312.jpg'),
+(25, 14, 22, 'Robusta Ấn Độ (Indian Robusta Cherry)', 1, 350000.00, 'uploads/products/product_6805da1d277cd.png'),
+(26, 14, 24, 'Robusta Indonesia (Java, Sumatra)', 1, 300000.00, 'uploads/products/product_682041dee6967.jpg'),
+(27, 14, 26, 'Robusta Congo (DRC – Democratic Republic of Congo)', 1, 350000.00, 'uploads/products/product_68204dc0ae5fb.png'),
+(28, 14, 27, 'Robusta Cameroon', 1, 400000.00, 'uploads/products/product_68204e70a7ab8.jpg'),
+(29, 14, 28, 'Robusta Côte d’Ivoire (Ivory Coast)', 1, 250000.00, 'uploads/products/product_68204e9fe695d.webp'),
+(30, 14, 29, 'Robusta Laos (Bolaven Plateau)', 1, 250000.00, 'uploads/products/product_682053717a90c.jpg');
 
 -- --------------------------------------------------------
 
@@ -276,10 +280,6 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`, `fullname`, `phone`,
 
 -- --------------------------------------------------------
 
---
--- Cấu trúc bảng cho bảng `user_details`
---
-
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -310,8 +310,7 @@ ALTER TABLE `orders`
 -- Chỉ mục cho bảng `order_items`
 --
 ALTER TABLE `order_items`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `order_id` (`order_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `products`
@@ -327,10 +326,6 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`),
   ADD UNIQUE KEY `email` (`email`);
-
---
--- Chỉ mục cho bảng `user_details`
---
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -373,12 +368,18 @@ ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `user_details`
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Các ràng buộc cho bảng `addresses`
 --
+ALTER TABLE `addresses`
+  ADD CONSTRAINT `fk_addresses_user_id` 
+  FOREIGN KEY (`user_id`) 
+  REFERENCES `users` (`id`) 
+  ON DELETE CASCADE 
+  ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `orders`
@@ -387,16 +388,23 @@ ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
+-- Thêm cột product_id nếu chưa tồn tại
+ALTER TABLE `order_items` 
+ADD COLUMN IF NOT EXISTS `product_id` INT NULL;
+
+--
 -- Các ràng buộc cho bảng `order_items`
 --
 ALTER TABLE `order_items`
-  ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`);
+  ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `order_items_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE SET NULL;
 
 --
 -- Các ràng buộc cho bảng `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
