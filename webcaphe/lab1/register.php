@@ -44,7 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("sssssss", $username, $email, $hashed_password, $fullname, $phone, $address, $city);
         
         if ($stmt->execute()) {
-            $success = "Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.";
+            $_SESSION['success'] = "Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.";
+            header("Location: index.php");
+            exit();
         } else {
             $error = "Có lỗi xảy ra: " . $conn->error;
         }
