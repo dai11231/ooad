@@ -39,28 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Mã hóa mật khẩu cho bảng users
         $hashed_password = '*' . strtoupper(sha1(sha1($password, true)));
         
-        // Thêm người dùng mới vào bảng users
-        $stmt = $conn->prepare("INSERT INTO users (username, email, password, fullname, phone) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssss", $username, $email, $hashed_password, $fullname, $phone);
+        // Thêm người dùng mới vào bảng users với đầy đủ thông tin
+        $stmt = $conn->prepare("INSERT INTO users (username, email, password, fullname, phone, address, city) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssss", $username, $email, $hashed_password, $fullname, $phone, $address, $city);
         
         if ($stmt->execute()) {
-            // Lấy ID người dùng vừa thêm
-            $user_id = $conn->insert_id;
-            
-            // Mã hóa mật khẩu cho bảng user_details
-            $hashed_password_bcrypt = password_hash($password, PASSWORD_DEFAULT);
-            
-            // Thêm thông tin chi tiết vào bảng user_details
-            $stmt2 = $conn->prepare("INSERT INTO user_details (user_id, email, password, fullname, phone, address, city) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt2->bind_param("issssss", $user_id, $email, $hashed_password_bcrypt, $fullname, $phone, $address, $city);
-            
-            if ($stmt2->execute()) {
-                $success = "Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.";
-            } else {
-                // Nếu không thể thêm vào user_details, vẫn cho phép đăng nhập với users
-                $success = "Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.";
-                $error = "Lưu ý: Một số thông tin chi tiết có thể không được lưu đầy đủ.";
-            }
+            $success = "Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.";
         } else {
             $error = "Có lỗi xảy ra: " . $conn->error;
         }

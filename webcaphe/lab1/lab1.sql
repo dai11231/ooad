@@ -276,24 +276,6 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`, `fullname`, `phone`,
 -- Cấu trúc bảng cho bảng `user_details`
 --
 
-CREATE TABLE `user_details` (
-  `user_id` int(11) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `fullname` varchar(100) NOT NULL,
-  `phone` varchar(20) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `city` varchar(50) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `user_details`
---
-
-INSERT INTO `user_details` (`user_id`, `email`, `password`, `fullname`, `phone`, `address`, `city`, `created_at`) VALUES
-(2, 'dangkhoanguyenphuc0409@gmail.com', '$2y$10$.55E3NgcfabaDS/9duPqyef.9jZbENOlQOfsLtW8WQ8GCUz.vR2MW', 'Nguyễn Phúc Đăng Khoa', '0865545705', '', '', '2025-04-21 17:30:06'),
-(3, 'ahehehihihahahuhu123@gmail.com', '$2y$10$ZkhtxtNq/z8fJeBgZkJ4muEKFl0MhLmwqUcAhBZrE4ABN.mvO1x56', 'le hieu', '122123231231', '', '', '2025-05-12 21:06:58');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -345,9 +327,6 @@ ALTER TABLE `users`
 --
 -- Chỉ mục cho bảng `user_details`
 --
-ALTER TABLE `user_details`
-  ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -392,8 +371,6 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT cho bảng `user_details`
 --
-ALTER TABLE `user_details`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
